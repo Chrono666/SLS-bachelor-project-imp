@@ -1,0 +1,413 @@
+%----------------------------------------------------------------
+%
+%  File    :  thesis.tex
+%
+%  Authors :  Keith Andrews, IICM, TU Graz, Austria
+%             Manuel Koschuch, FH Campus Wien, Austria
+%			  Sebastian Ukleja, FH Campus Wien, Austria
+%
+%  Created :  22 Feb 96
+%
+%  Changed :  14 Oct 2020
+%
+%  For suggestions and remarks write to: sebastian.ukleja@fh-campuswien.ac.at
+%
+%----------------------------------------------------------------
+
+% --- Setup for the document ------------------------------------
+
+%Class for a book like style:
+\documentclass[11pt,a4paper,oneside]{scrbook}
+%For a more paper like style use this class instead:
+%\documentclass[11pt,a4paper,oneside]{thesis}
+
+%input encoding for windows in utf-8 needed for Ä,Ö,Ü etc..:
+\usepackage[utf8]{inputenc}
+%input encoding for linux:
+%\usepackage[latin1]{inputenc}
+%input encoding for mac:
+%\usepackage[applemac]{inputenc}
+
+\usepackage[english]{babel}
+% for german use this line instead:
+%\usepackage[ngerman]{babel}
+
+%needed for font encoding
+\usepackage[T1]{fontenc}
+
+% want Arial? uncomment next two lines...
+%\usepackage{uarial}
+%\renewcommand{\familydefault}{\sfdefault}
+
+%some formatting packages
+\usepackage[bf,sf]{subfigure}
+\renewcommand{\subfigtopskip}{0mm}
+\renewcommand{\subfigcapmargin}{0mm}
+
+%For better font resolution in pdf files
+\usepackage{lmodern}
+
+\usepackage{url}
+
+%\usepackage{latexsym}
+
+\usepackage{geometry} % define pagesize in more detail
+
+
+\usepackage{colortbl} % define colored backgrounds for tables
+
+\usepackage{courier} %for listings
+\usepackage{listings} % nicer code formatting
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\usepackage{graphicx}
+  \pdfcompresslevel=9
+  \pdfpageheight=297mm
+  \pdfpagewidth=210mm
+  \usepackage[         % hyperref should be last package loaded
+    pdftex, 		   % needed for pdf compiling, DO NOT compile with LaTeX
+    bookmarks,
+    bookmarksnumbered,
+    linktocpage,
+    pagebackref,
+    pdfview={Fit},
+    pdfstartview={Fit},
+    pdfpagemode=UseOutlines,                 % open bookmarks in Acrobat
+  ]{hyperref}
+\DeclareGraphicsExtensions{.pdf,.jpg,.png}
+\usepackage{bookmark}
+
+\usepackage[title]{appendix}
+
+%paper format
+\geometry{a4paper,left=30mm,right=25mm, top=30mm, bottom=30mm}
+
+% --- Settings for header and footer ---------------------------------
+\usepackage{scrlayer-scrpage}
+\clearscrheadfoot
+\pagestyle{scrheadings}
+\automark{chapter}
+
+%Left header shows chapter and chapter name, will not display on first chapter page use \ihead*{\leftmark} to show on every page
+\ihead{\leftmark}
+%\ohead*{\rightmark}	%optional right header
+\ifoot*{Student}		%left footer shows student name
+\ofoot*{\thepage}		%right footer shows pagination
+%---------------------------------------------------------------------
+
+%Start of your document beginning with title page
+\begin{document}
+
+
+% --- Main Title Page ------------------------------------------------
+\begin{titlepage}
+\frontmatter
+
+\begin{picture}(50,50)
+\put(-70,40){\hbox{\includegraphics{images/logo.png}}}
+\end{picture}
+
+\vspace*{-5.8cm}
+
+\begin{center}
+
+\vspace{6.2cm}
+
+\hspace*{-1.0cm} {\LARGE \textbf{Quality Control of Additive SLS Manufacturing\\}}
+\vspace{0.2cm}
+\hspace*{-1.0cm} using Convolutional Neural Networks\\
+
+\vspace{2.0cm}
+
+\hspace*{-1.0cm} { \textbf{Bachelor Thesis\\}}
+
+\vspace{0.65cm}
+
+\hspace*{-1.0cm} Submitted in partial fulfillment of the requirements for the degree of \\
+
+\vspace{0.65cm}
+
+\hspace*{-1.0cm} \textbf{Bachelor of Science in Engineering\\}
+
+\vspace{0.65cm}
+
+\hspace*{-1.0cm} to the University of Applied Sciences FH Campus Wien \\
+\vspace{0.2cm}
+\hspace*{-1.0cm} Bachelor Degree Program: Computer Science and Digital Communications \\
+
+\vspace{1.6cm}
+
+\hspace*{-1.0cm} \textbf{Author:} \\
+\vspace{0.2cm}
+\hspace*{-1.0cm} first name surname \\
+
+\vspace{0.7cm}
+
+\hspace*{-1.0cm} \textbf{Student identification number:}\\
+\vspace{0.2cm}
+\hspace*{-1.0cm} Number \\
+
+\vspace{0.7cm}
+
+\hspace*{-1.0cm} \textbf{Supervisor:} \\
+\vspace{0.2cm}
+\hspace*{-1.0cm} Title first name surname \\
+
+\vspace{0.7cm}
+
+% Reviewer if needed
+%\hspace*{-1.0cm} \textbf{Reviewer: (optional)} \\
+%\vspace{0.2cm}
+%\hspace*{-1.0cm} Title first name surname \\
+
+
+\vspace{1.0cm}
+
+\hspace*{-1.0cm} \textbf{Date:} \\
+\vspace{0.2cm}
+\hspace*{-1.0cm} dd.mm.yyyy \\
+
+\end{center}
+\end{titlepage}
+
+\newpage
+
+\vspace*{16cm}
+\setcounter{page}{1}
+
+% --- Declaration of authorship ------------------------------------------
+\hspace*{-0.7cm} \underline{Declaration of authorship:}\\\\
+I declare that this Bachelor Thesis has been written by myself. I have not used any other than the listed sources, nor have I received any unauthorized help.\\\\
+I hereby certify that I have not submitted this Bachelor Thesis in any form (to a reviewer for assessment) either in Austria or abroad.\\\\
+Furthermore, I assure that the (printed and electronic) copies I have submitted are identical.
+\\\\\\
+Date: \hspace{6cm} Signature:\\
+
+% --- English Abstract ----------------------------------------------------
+\cleardoublepage
+\chapter*{Abstract}
+(E.g. ``This thesis investigates...'')
+aaaa
+
+% --- German Abstract ----------------------------------------------------
+\cleardoublepage
+\chapter*{Kurzfassung}
+(Z.B. ``Diese Arbeit untersucht...'')
+
+
+% --- Abbrevations ----------------------------------------------------
+\chapter*{List of Abbreviations}
+\vspace{0.65cm}
+
+\begin{table*}[htbp]
+		\begin{tabular}{ll}
+			ARP & Address Resolution Protocol \\
+			GPRS & General Packet Radio Service \\
+			GSM  &  Global System for Mobile communication \\
+			WLAN & Wireless Local Area Network \\
+		\end{tabular}
+\end{table*}
+
+% --- Key terms ----------------------------------------------------
+\newpage
+\chapter*{Key Terms}
+\vspace{0.65cm}
+
+\begin{itemize}
+	\setlength{\itemsep}{0pt}
+	\item[] GSM
+	\item[] Mobilfunk
+	\item[] Zugriffsverfahren
+\end{itemize}
+
+% --- Table of contents autogenerated ------------------------------------
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+
+% --- Begin of Thesis ----------------------------------------------------
+\mainmatter
+\chapter{Introduction}
+\label{chap:intro}
+Textkörper mit Bild
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[height=5cm]{images/buecher.png}
+	\caption{Ein Stapel Bücher}
+	\label{fig:buecher}
+\end{figure}
+
+
+Textkörper Fortsetzung mit Verweis auf den wundervollen Stapel Bücher in Abbildung \ref{fig:buecher}.
+
+
+\section{Sub-chapter 1}
+\label{sec:Unterkapitel1}
+
+Textkörper mit Formel:
+
+\begin{equation}
+U(j\omega)=\int^{\infty}_{-\infty}{u(t) \cdot e^{-j\omega t}dt}
+\label{form:form1}
+\end{equation}
+
+Textkörper Fortsetzung mit Verweis auf Formel \ref{form:form1}. Und nicht zu vergessen: es gibt auch noch eine tolle Abbildung in Kapitel \ref{chap:intro}, nämlich Abbildung \ref{fig:buecher}.
+
+\subsection{Under sub-chapter 11}
+\label{sec:UnterUnterkapitel11}
+
+Textkörper mit direktem Zitat und Seitenanzahl:
+``It would be very easy to show how technical or report writing differed from other writing'' \cite[p.~3]{young2002technical}.
+\subsection{Under sub-chapter 12}
+\label{sec:UnterUnterkapitel12}
+
+Textkörper mit Referenzen:
+Für weiterführende Informationen zum wissenschaftlichen Schreiben siehe "J. Schimel, Writing Science" \cite{schimel2012writing}. Es wird empfohlen den Sprachleitfaden der FH Campus Wien \cite{alker2006} zu berücksichtigen und die Checkliste für wissenschafltiches Schreiben \cite{petz2018} zu verwenden. Beide Leitfäden sind im FH Portal zu finden.
+
+\chapter{Chapter 2}
+\label{chap:back}
+
+Textkörper mit noch einem Bild
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{images/birne}
+	\caption{Eine Glühbirne}
+	\label{fig:birne}
+\end{figure}
+
+
+
+\section{Sub-chapter 21}
+\label{sec:Unterkapitel21}
+
+Textkörper mit Tabelle.
+
+\begin{table*}[htbp]
+	\centering
+		\begin{tabular}{|l|c|r|}
+		\hline
+		\rowcolor[gray]{0.9}
+		Spalte 1 & Spalte 2 & Spalte 3 \\
+		\hline
+		Affen & Giraffen & Löwen \\
+		Apfel & Birnen & Bananen \\
+		Irgend & et & was \\
+		\hline
+		\end{tabular}
+	\caption{Beispiel für eine Tabelle}
+	\label{tab:BeispielFuerEineTabelle}
+\end{table*}
+
+Man beachte die Gegenüberstellung in Tabelle \ref{tab:BeispielFuerEineTabelle}.
+
+%Online Tabellengenerator für Latex: https://www.tablesgenerator.com/
+
+\section{Sub-chapter 23}
+\label{sec:Unterkapitel23}
+
+Aufzählungen:
+
+Nummeriert:
+
+\begin{enumerate}
+	\item Punkt 1
+	\item Punkt 2
+\end{enumerate}
+
+Mit Bullet Points:
+
+\begin{itemize}
+	\item Punkt 1
+	\item Punkt 2
+\end{itemize}
+
+Mit Beschreibungen:
+
+\begin{description}
+	\item[Item 1] das ist der 1.Punkt
+	\item[Item 2] und das der 2.
+\end{description}
+
+
+Auch Programmcodes können an entsprechender Stelle eingefügt werden, man beachte dazu auch Listing \ref{lst:conv}.
+
+% see also http://mirror.easyname.at/ctan/macros/latex/contrib/listings/listings.pdf for options
+
+\begin{lstlisting}[frame=lines, caption=Simple Listing, captionpos=b, label = lst:conv, language=C, showstringspaces=false]
+#include <stdio.h>
+int main()
+{
+	int i, n, t1 = 0, t2 = 1, nextTerm;
+
+	printf("Enter the number of terms: ");
+	scanf("%d", &n);
+
+	printf("Fibonacci Series: ");
+
+	for (i = 1; i <= n; ++i)
+	{
+		printf("%d, ", t1);
+		nextTerm = t1 + t2;
+		t1 = t2;
+		t2 = nextTerm;
+	}
+	return 0;
+}
+\end{lstlisting}
+
+Und zuguterletzt, Formeln mitten im Fliesstext, wie z.B. $a^2+b^2=c^2$, in einem Absatz.
+
+\newpage
+\chapter{Related Work}
+
+\newpage
+\chapter{Conclusion}
+
+\newpage
+\chapter{Future work}
+
+\newpage
+
+% --- Bibliography ------------------------------------------------------
+
+%IEEE Citation [1]
+\bibliographystyle{IEEEtran}
+%for alphanumeric citation eg.: [ABC19]
+%\bibliographystyle{alpha}
+
+% List references I definitely want in the bibliography,
+% regardless of whether or not I cite them in the thesis.
+
+\newpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{thesisBib}
+
+\newpage
+
+% --- List of Figures ----------------------------------------------------
+
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+
+% --- List of Tables -----------------------------------------------------
+
+\newpage
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+
+% --- Appendix A -----------------------------------------------------
+
+\backmatter
+\appendix
+\begin{appendices}
+\chapter{Appendix}
+
+(Hier können Schaltpläne, Programme usw. eingefügt werden.)
+
+\clearpage
+\end{appendices}
+
+\end{document}
