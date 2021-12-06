@@ -1,4 +1,5 @@
 **/data/*
+**/grad_cam/*
 **/tuning_data/*
 **/saved_models/*
 **/old_saved_models/*
