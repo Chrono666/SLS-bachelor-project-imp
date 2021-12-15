@@ -3,7 +3,9 @@
 ## Table of contents
 
 * [General information](#general-information)
+* [Project information](#project-information)
 * [Setup](#setup)
+* [Notebook description](#notebook-description)
 
 ## General information
 
@@ -32,9 +34,8 @@ folder of the project (currently only linux supported).
 
 In the comand line move to the env folder of the project and use the following commands:
 ```
-$ conda env create -f environment.yml
-$ conda activate tf2
-$ python -m ipykernel install --user --name=python3
+$ conda env create -f sls-linux.yml
+$ conda activate sls-linux
 ```  
 or use the graphical interface (anaconda-navigator) to import it.  
 
