@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/data/data_from_paper" />
+      <excludeFolder url="file://$MODULE_DIR$/data/data_full" />
+      <excludeFolder url="file://$MODULE_DIR$/data/data_heavily_reduced" />
+      <excludeFolder url="file://$MODULE_DIR$/data/data_predictions" />
+      <excludeFolder url="file://$MODULE_DIR$/data/data_raw" />
+      <excludeFolder url="file://$MODULE_DIR$/data/data_raw (copy)" />
+      <excludeFolder url="file://$MODULE_DIR$/data/data_reduced" />
+      <excludeFolder url="file://$MODULE_DIR$/data/sls_process_data" />
+    </content>
     <orderEntry type="jdk" jdkName="Python 3.9 (sls)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

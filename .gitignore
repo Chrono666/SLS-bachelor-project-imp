@@ -1,5 +1,7 @@
 **/data/*
-**/grad_cam/*
-**/tuning_data/*
 **/saved_models/*
 **/old_saved_models/*
+/grad_cam_images/*
+/grad_cam_images/
+/vgg16_tuner/
+/logs/
