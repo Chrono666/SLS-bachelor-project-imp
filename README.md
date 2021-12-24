@@ -12,8 +12,8 @@
 This project is the technical implementation of the bachelor thesis "In-Situ detection of printing defects during a SLS manufacturing process using deep learning".
 A disadvantage of the layer wise manufacturing of SLS is that the component quality can not be assured without destroying 
 or scanning the component. For this purpose this thesis uses CNNs on images extracted from the printing processes to detect
-curling of the component during the printing process. Curling happens if the component is subjected to hight temperatur 
-differences during the manufacturing which create residual stress inside it and lead to a curling of the componetn.
+curling of the component during the printing process. Curling happens if the component is subjected to hight temperature 
+differences during the manufacturing which create residual stress inside it and lead to a curling of the component.
 This curling results in the component to stick out of the powder bed and can lead, in the worst case, to the 
 recoater to rip the component out.
 
@@ -39,11 +39,11 @@ $ conda activate sls-linux
 ```  
 or use the graphical interface (anaconda-navigator) to import it.  
 
-Use the `jupyter-notebook` for single notebook or `jupyter-lab` to open the whole project.
+Use the `jupyter-notebook` for single notebook or `jupyter-lab` to open the whole project in the jupyter-lab environment.
 
 #### NOTE: 
 This project also uses the GPU to increase computational speed and performance. What kind of device your operating system provides
-is displayed by `tf.config.get_visible_devices()` and is CPU by default. To enable GPU support please follow the instrucitons
+is displayed by `tf.config.get_visible_devices()` and is CPU by default. To enable GPU support please follow the instructions
 on https://www.tensorflow.org/install/gpu
 
 ## Notebook description  
@@ -56,9 +56,9 @@ different areas of concerns.
 - loads data set from specified path
 - Preprocess images through the ImageDataGenerator
 - builds the base_model using the defined CNN architecture (VGG-16, Xception, ResNet50)
-- builds the complete model by inplementing a custom output layer onto the base_model
-- compiles the model and trains it with the base_model layers frozen (step 1 of transfere leraning)
-- compiles the model again and trains it with the base_model layers unfrozen (step 1 of transfere leraning)
+- builds the complete model by implementing a custom output layer onto the base_model
+- compiles the model and trains it with the base_model layers frozen (step 1 of transfer learning)
+- compiles the model again and trains it with the base_model layers unfrozen (step 2 of transfer learning)
 - evaluates model on test set which was not used in training and prints the defined metrics
 - saves model as json and its weights as h5 to load it for predictions  
 
