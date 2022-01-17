@@ -5,24 +5,6 @@ import cv2
 import glob
 
 
-def load_model(model_path, weight_path):
-    # load json and create model
-    file = open(model_path, 'r')
-    model_json = file.read()
-    file.close()
-    loaded_model = keras.models.model_from_json(model_json)
-    # load weights
-    loaded_model.load_weights(weight_path)
-    optimizer = keras.optimizers.Adam(learning_rate=0.0001, beta_1=0.9, beta_2=0.999)
-    loaded_model.compile(loss="binary_crossentropy", optimizer=optimizer,
-                         metrics=['accuracy', 'Recall', 'Precision', 'AUC'])
-    return loaded_model
-
-
-def init_model(json_path, weights_path):
-    return load_model(json_path, weights_path)
-
-
 def classify_single_image(image_path, model):
     original = cv2.imread(image_path)
     rgb = cv2.cvtColor(original, cv2.COLOR_BGR2RGB)
@@ -81,11 +63,9 @@ def option2(folder_path, model):
 
 if __name__ == '__main__':
 
-    # json_path = input('Please enter json path for initializing the model: \n')
-    # weight_path = input('Please enter h5 path for initializing the model: \n')
-    # model = init_model(json_path, weight_path)
-    model = init_model('saved_models/no_augmentation/full_data/second_train_step/vgg16.json',
-                       'saved_models/no_augmentation/full_data/second_train_step/vgg16_weights.h5')
+
+    path = input('enter model path: \n')
+    model = keras.models.load_model(path)
 
     while (True):
         print_menu()
