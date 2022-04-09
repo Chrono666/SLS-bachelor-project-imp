@@ -1,4 +1,4 @@
-# Frontend for Trading Service - Distributed System School Project
+# Image Classification of SLS printing processes - Practical Implementation of BA1
 
 ## Table of contents
 
